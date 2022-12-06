@@ -1,5 +1,5 @@
 package org.example;
 
-public interface ChallengeLevel {
+public interface ChallengeLevelStrategy {
     public double getDifficultyScaling();
 }
