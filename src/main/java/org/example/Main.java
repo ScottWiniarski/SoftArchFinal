@@ -62,8 +62,8 @@ public class Main {
             }
         }
 
-        System.out.printf("Now %s, please pick a physical item for self defense. With all the magic running around, \nit's no small wonder some things can take a magical" +
-                "punch or seven. A physical weapon might be just what you need,\nto crack a soul crystal or a person's skull. I know I'm tempted to on occasion.\n\n" +
+        System.out.printf("Now %s, please pick a physical item for self defense. With all the magic running around, \nit's no small wonder some things can take a magical " +
+                "punch or seven. A physical weapon might be just what you need,\nto crack a soul crystal or a person's skull. I know I'm tempted to do so on occasion.\n\n" +
                 "Please choose from the following:\n1) Sturdy Sword\n2) Solid Cane", name);
 
         do{
@@ -84,6 +84,9 @@ public class Main {
 
         wizardSchool.addToRoster(name, magicItemName, magicItemType, physItemName, physItemType);
 
+        System.out.println("\nNow... to see your full card, please see below:\n ");
+        Wizard userWizard = wizardSchool.getFromRoster(name);
 
+        System.out.printf("Name: %s\nMagic Weapon: %s\nPhysical Weapon: %s ", userWizard.getName(), userWizard.getPrimaryWeapon().getItemName(), userWizard.getSecondaryWeapon().getItemName() );
     }
 }
