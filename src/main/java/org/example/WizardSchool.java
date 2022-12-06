@@ -7,6 +7,8 @@ public class WizardSchool {
     ArrayList<Wizard> roster = new ArrayList<>();
     ArrayList<Enemy> enemies = new ArrayList<>();
     EasyMode easyMode = new EasyMode();
+    NormalMode normalMode = new NormalMode();
+    HardMode hardMode = new HardMode();
 
     private WizardSchool() {}
     public static WizardSchool getInstance(){
@@ -46,6 +48,24 @@ public class WizardSchool {
         Wizard userWizard = new Wizard(name,MagicFactory.getMagicItem(magicItemName, 15, magicType), PhysicalFactory.getPhysicalItem(physItemName, 12, physType)) {};
         roster.add(userWizard);
     }
+
+    public Wizard getFromRoster(String checkName){
+        Wizard searchTarget;
+
+        for (Wizard item : roster) {
+            if(item.getName().equals(checkName)){
+                searchTarget = item;
+                return searchTarget;
+            }
+        }
+        return null;
+    }
+
+    /*public String displayFromRoster(String target){
+        Wizard search = getFromRoster(target);
+
+        return toString("%s ");
+    }*/
 
     public Enemy setUpTrainingDummy(){
         return new TrainingDummy("Dumbo", 200);
